@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/thomaswelton/laravel-gravatar.png?branch=master)](https://travis-ci.org/thomaswelton/laravel-gravatar)
 [![Latest Stable Version](https://poser.pugx.org/thomaswelton/laravel-gravatar/v/stable.png)](https://packagist.org/packages/thomaswelton/laravel-gravatar)
 [![Total Downloads](https://poser.pugx.org/thomaswelton/laravel-gravatar/downloads.png)](https://packagist.org/packages/thomaswelton/laravel-gravatar)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/thomaswelton/laravel-gravatar/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 
 ## Installation
 
