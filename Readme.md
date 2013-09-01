@@ -29,6 +29,14 @@ php artisan config:publish thomaswelton/laravel-gravatar
 ```
 
 Update the config file to specify the default avatar size to use.
+And a default image to be return if no Gravatar is found allowed defaults
+- (bool)   false
+- (string) 404
+- (string) mm
+- (string) identicon
+- (string) monsterid
+- (string) wavatar
+- (string) retro
 
 ## Usage
 

@@ -10,6 +10,7 @@ class Gravatar extends \emberlabs\gravatarlib\Gravatar{
     function __construct(){
         // Enable secure images by default
 
+        $this->setDefaultImage(Config::get('laravel-gravatar::default'));
         $this->default_size = Config::get('laravel-gravatar::size');
         $this->enableSecureImages();
     }
