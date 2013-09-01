@@ -3,11 +3,12 @@
 use \Config;
 use Illuminate\Support\Facades\HTML;
 
-class Gravatar extends \emberlabs\gravatarlib\Gravatar{
-
+class Gravatar extends \emberlabs\gravatarlib\Gravatar
+{
     private $default_size = null;
 
-    function __construct(){
+    public function __construct()
+    {
         // Enable secure images by default
 
         $this->setDefaultImage(Config::get('laravel-gravatar::default'));
@@ -15,8 +16,9 @@ class Gravatar extends \emberlabs\gravatarlib\Gravatar{
         $this->enableSecureImages();
     }
 
-    public function src($email, $size = null){
-        if(is_null($size)){
+    public function src($email, $size = null)
+    {
+        if (is_null($size)) {
             $size = $this->default_size;
         }
 
@@ -27,7 +29,8 @@ class Gravatar extends \emberlabs\gravatarlib\Gravatar{
         return $this->buildGravatarURL($email);
     }
 
-    public function image($email, $alt = null, $attributes = array()){
+    public function image($email, $alt = null, $attributes = array())
+    {
         $dimensions = array();
 
         if(array_key_exists('width', $attributes)) $dimensions[] = $attributes['width'];
@@ -37,7 +40,7 @@ class Gravatar extends \emberlabs\gravatarlib\Gravatar{
 
         $src = $this->src($email, $max_dimension);
 
-        if(!array_key_exists('width', $attributes) && !array_key_exists('height', $attributes)){
+        if (!array_key_exists('width', $attributes) && !array_key_exists('height', $attributes)) {
             $attributes['width'] = $this->size;
             $attributes['height'] = $this->size;
         }
