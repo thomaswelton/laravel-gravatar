@@ -3,7 +3,7 @@
 use \Config;
 use Illuminate\Support\Facades\HTML;
 
-class Gravatar extends \thomaswelton\gravatarlib\Gravatar
+class Gravatar extends \thomaswelton\GravatarLib\Gravatar
 {
     private $default_size = null;
 
