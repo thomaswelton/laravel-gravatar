@@ -8,7 +8,7 @@
 
 Update your `composer.json` file to include this package as a dependency
 ```json
-"thomaswelton/laravel-gravatar": "dev-master"
+"thomaswelton/laravel-gravatar": "0.0.x"
 ```
 
 Register the Gravatar service provider by adding it to the providers array in the `app/config/app.php` file.
