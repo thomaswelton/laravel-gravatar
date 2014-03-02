@@ -3,6 +3,7 @@
     "description": "Laravel 4 Gravatar helper",
     "keywords" : ["laravel" , "laravel4" , "gravatar" ] ,
     "homepage" : "https://github.com/thomaswelton/laravel-gravatar" ,
+    "license" : "MIT",
     "authors": [
         {
             "name": "ThomasWelton",
