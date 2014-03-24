@@ -30,7 +30,7 @@ class Gravatar extends \thomaswelton\GravatarLib\Gravatar
 
         if(!is_null($rating)) $this->setMaxRating($rating);
 
-        return $this->buildGravatarURL($email);
+        return htmlentities($this->buildGravatarURL($email));
     }
 
     public function image($email, $alt = null, $attributes = array(), $rating = null)
