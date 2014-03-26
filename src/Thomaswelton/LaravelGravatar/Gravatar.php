@@ -51,4 +51,14 @@ class Gravatar extends \thomaswelton\GravatarLib\Gravatar
 
         return HTML::image($src, $alt, $attributes);
     }
+
+    public function exists($email)
+	{
+		$this->setDefaultImage('404');
+
+		$url = $this->buildGravatarURL($email);
+		$headers = get_headers($url, 1);
+
+		return strpos($headers[0], '200') ? true : false;
+	}
 }
