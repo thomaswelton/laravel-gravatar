@@ -58,6 +58,9 @@ The content rating can be changed by changing the `$rating` argument when callin
 
 ## Usage
 
+### Gravatar::exists($email)
+Returns a boolean telling if the given `$email` has got a Gravatar.
+
 ### Gravatar::src($email, $size = null, $rating = null)
 
 Returns the https URL for the Gravatar of the email address specified.
