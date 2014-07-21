@@ -32,15 +32,18 @@ php artisan config:publish thomaswelton/laravel-gravatar
 
 ### Default Image
 
-Update the config file to specify the default avatar size to use.
-And a default image to be return if no Gravatar is found allowed defaults
-- (bool)   false
-- (string) 404
-- (string) mm
-- (string) identicon
-- (string) monsterid
-- (string) wavatar
-- (string) retro
+Update the config file to specify the default avatar size to use and a default image to be return if no Gravatar is found. 
+
+Allowed defaults:
+- (bool)   `false`
+- (string) `404`
+- (string) `mm`: (mystery-man) a simple, cartoon-style silhouetted outline of a person (does not vary by email hash).
+- (string) `identicon`: a geometric pattern based on an email hash.
+- (string) `monsterid`: a generated 'monster' with different colors, faces, etc.
+- (string) `wavatar`: generated faces with differing features and backgrounds.
+- (string) `retro`: awesome generated, 8-bit arcade-style pixelated faces.
+
+Example images can be viewed on [the Gravatar website](https://gravatar.com/site/implement/images/).
 
 ### Content Ratings
 
