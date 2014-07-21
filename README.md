@@ -48,12 +48,12 @@ Example images can be viewed on [the Gravatar website](https://gravatar.com/site
 ### Content Ratings
 
 By default only "G" rated images will be shown. You can change this system wide in the config file by editing `'maxRating' => 'g'` allowed values are
-- g
-- pg
-- r
-- x
+- `g`: suitable for display on all websites with any audience type.
+- `pg`: may contain rude gestures, provocatively dressed individuals, the lesser swear words, or mild violence.
+- `r`: may contain such things as harsh profanity, intense violence, nudity, or hard drug use.
+- `x`: may contain hardcore sexual imagery or extremely disturbing violence.
 
-Or the content rating can be changed by changing the `$rating` argument when calling `Gravatar::src` or `Gravatar::image`
+The content rating can be changed by changing the `$rating` argument when calling `Gravatar::src` or `Gravatar::image`.
 
 
 ## Usage
