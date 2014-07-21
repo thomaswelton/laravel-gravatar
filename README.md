@@ -68,13 +68,13 @@ Can optionally pass in the size required as an integer. The size will be contain
 
 ```html
 <!-- Show image with default dimensions -->
-<img src="<?= Gravatar::src('thomaswelton@me.com') ?>">
+<img src="{{ Gravatar::src('thomaswelton@me.com') }}">
 
 <!-- Show image at 200px -->
-<img src="<?= Gravatar::src('thomaswelton@me.com', 200) ?>">
+<img src="{{ Gravatar::src('thomaswelton@me.com', 200) }}">
 
 <!-- Show image at 512px scaled in HTML to 1024px -->
-<img src="<?= Gravatar::src('thomaswelton@me.com', 1024) ?>" width=1024>
+<img src="{{ Gravatar::src('thomaswelton@me.com', 1024) }}" width=1024>
 ```
 
 ### Gravatar::image($email, $alt = null, $attributes = array(), $rating = null)
