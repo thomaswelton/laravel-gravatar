@@ -61,4 +61,9 @@ class Gravatar extends \thomaswelton\GravatarLib\Gravatar
 
 		return strpos($headers[0], '200') ? true : false;
 	}
+
+    public function profile($email)
+    {
+       return $this->getGravatarProfile($email);
+    }
 }
