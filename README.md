@@ -91,3 +91,15 @@ echo Gravatar::image('thomaswelton@me.com', 'Some picture', array('width' => 200
 // Show image at 512px scaled in HTML to 1024px
 echo Gravatar::image('thomaswelton@me.com', 'Some picture', array('width' => 1024, 'height' => 1024));
 ```
+
+### Gravatar::profile($email)
+
+Returns an array of Gravatar profile data (email argument must be the primary email on the gravatar account)
+
+```php
+// Get profile array
+// Email must be the primary email on the Gravatar account!
+
+$array = Gravatar::profile('thomaswelton@me.com');
+
+```
