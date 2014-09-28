@@ -14,7 +14,7 @@
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.x",
-        "thomaswelton/gravatarlib": "0.1.x"
+        "thomaswelton/gravatarlib": "0.2.x"
     },
     "autoload": {
         "psr-0": {

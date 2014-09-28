@@ -61,4 +61,17 @@ class Gravatar extends \thomaswelton\GravatarLib\Gravatar
 
 		return strpos($headers[0], '200') ? true : false;
 	}
+
+    /**
+     * Get array of Gravatar profile info
+     * @param  string   $email        -Primary account email
+     * @param  boolean  $hash_email   -True will trim and hash provided email, if already trimmed
+     *                                 and hashed use false
+     * @return mixed                  -Returns array on success, false on failure     
+     */
+    public function profile($email, $hash_email = true)
+    {
+       return $this->getGravatarProfile($email, $hash_email);
+    }
+
 }
