@@ -102,4 +102,10 @@ Returns an array of Gravatar profile data (email argument must be the primary em
 
 $array = Gravatar::profile('thomaswelton@me.com');
 
+
+//If your email is already trimmed and hashed
+
+$email = md5( trim( 'thomaswelton@me.com' ) );
+$array = Gravatar::profile($email, false);
+
 ```
