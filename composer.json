@@ -1,7 +1,7 @@
 {
     "name": "thomaswelton/laravel-gravatar",
-    "description": "Laravel 4 Gravatar helper",
-    "keywords" : ["laravel" , "laravel4" , "gravatar" ] ,
+    "description": "Laravel 5 Gravatar helper",
+    "keywords" : ["laravel" , "laravel5" , "gravatar" ] ,
     "homepage" : "https://github.com/thomaswelton/laravel-gravatar" ,
     "license" : "MIT",
     "authors": [
@@ -12,8 +12,9 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0",
-        "illuminate/support": "4.x",
+        "php": ">=5.4.0",
+        "illuminate/html": "~5.0",
+        "illuminate/support": "~5.0",
         "thomaswelton/gravatarlib": "0.1.x"
     },
     "autoload": {
@@ -21,5 +22,10 @@
             "Thomaswelton\\LaravelGravatar": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
 }
