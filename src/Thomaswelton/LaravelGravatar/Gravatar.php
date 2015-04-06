@@ -1,6 +1,6 @@
 <?php namespace Thomaswelton\LaravelGravatar;
 
-use Config;
+use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Support\Facades\HTML;
 use thomaswelton\GravatarLib\Gravatar as GravatarLib;
 
@@ -8,12 +8,12 @@ class Gravatar extends GravatarLib
 {
     private $defaultSize = null;
 
-    public function __construct()
+    public function __construct(Config $config)
     {
         // Set default configuration values
-        $this->setDefaultImage(Config::get('gravatar.default'));
-        $this->defaultSize = Config::get('gravatar.size');
-        $this->setMaxRating(Config::get('gravatar.maxRating', 'g'));
+        $this->setDefaultImage($config->get('gravatar.default'));
+        $this->defaultSize = $config->get('gravatar.size');
+        $this->setMaxRating($config->get('gravatar.maxRating', 'g'));
 
         // Enable secure images by default
         $this->enableSecureImages();
