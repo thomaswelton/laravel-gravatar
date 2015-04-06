@@ -1,34 +1,39 @@
 <?php namespace Thomaswelton\LaravelGravatar;
 
-use \Config;
+use Config;
 use Illuminate\Support\Facades\HTML;
+use thomaswelton\GravatarLib\Gravatar as GravatarLib;
 
-class Gravatar extends \thomaswelton\GravatarLib\Gravatar
+class Gravatar extends GravatarLib
 {
-    private $default_size = null;
+    private $defaultSize = null;
 
     public function __construct()
     {
+        // Set default configuration values
+        $this->setDefaultImage(Config::get('gravatar.default'));
+        $this->defaultSize = Config::get('gravatar.size');
+        $this->setMaxRating(Config::get('gravatar.maxRating', 'g'));
+
         // Enable secure images by default
-
-        $this->setDefaultImage(Config::get('laravel-gravatar::default'));
-        $this->default_size = Config::get('laravel-gravatar::size');
-
-        $this->setMaxRating(Config::get('laravel-gravatar::maxRating', 'g'));
         $this->enableSecureImages();
     }
 
     public function src($email, $size = null, $rating = null)
     {
-        if (is_null($size)) {
-            $size = $this->default_size;
+        if (is_null($size))
+        {
+            $size = $this->defaultSize;
         }
 
         $size = max(1, min(512, $size));
 
         $this->setAvatarSize($size);
 
-        if(!is_null($rating)) $this->setMaxRating($rating);
+        if ( ! is_null($rating))
+        {
+            $this->setMaxRating($rating);
+        }
 
         return htmlentities($this->buildGravatarURL($email));
     }
@@ -37,19 +42,20 @@ class Gravatar extends \thomaswelton\GravatarLib\Gravatar
     {
         $dimensions = array();
 
-        if(array_key_exists('width', $attributes)) $dimensions[] = $attributes['width'];
-        if(array_key_exists('height', $attributes)) $dimensions[] = $attributes['height'];
+        if (array_key_exists('width', $attributes)) $dimensions[] = $attributes['width'];
+        if (array_key_exists('height', $attributes)) $dimensions[] = $attributes['height'];
 
-        $max_dimension = (count($dimensions)) ? min(512, max($dimensions)) : $this->default_size;
+        $max_dimension = (count($dimensions)) ? min(512, max($dimensions)) : $this->defaultSize;
 
         $src = $this->src($email, $max_dimension, $rating);
 
-        if (!array_key_exists('width', $attributes) && !array_key_exists('height', $attributes)) {
+        if ( ! array_key_exists('width', $attributes) && !array_key_exists('height', $attributes))
+        {
             $attributes['width'] = $this->size;
             $attributes['height'] = $this->size;
         }
 
-        return HTML::image($src, $alt, $attributes);
+        return $this->formatImage($src, $alt, $attributes);
     }
 
     public function exists($email)
@@ -61,4 +67,9 @@ class Gravatar extends \thomaswelton\GravatarLib\Gravatar
 
 		return strpos($headers[0], '200') ? true : false;
 	}
+
+    private function formatImage($src, $alt, $attributes)
+    {
+        return '<img src="'.$src.'" alt="'.$alt.'" height="'.$attributes['height'].'" width="'.$attributes['width'].'">';
+    }
 }
