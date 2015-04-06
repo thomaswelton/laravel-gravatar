@@ -8,15 +8,15 @@
 
 Update your `composer.json` file to include this package as a dependency
 ```json
-"thomaswelton/laravel-gravatar": "0.1.x"
+"thomaswelton/laravel-gravatar": "0.2.x"
 ```
 
-Register the Gravatar service provider by adding it to the providers array in the `app/config/app.php` file.
+Register the Gravatar service provider by adding it to the providers array in the `config/app.php` file.
 ```
 Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider
 ```
 
-Alias the Gravatar facade by adding it to the aliases array in the `app/config/app.php` file.
+Alias the Gravatar facade by adding it to the aliases array in the `config/app.php` file.
 ```php
 'aliases' => array(
 	'Gravatar' => 'Thomaswelton\LaravelGravatar\Facades\Gravatar'
@@ -27,12 +27,12 @@ Alias the Gravatar facade by adding it to the aliases array in the `app/config/a
 
 Copy the config file into your project by running
 ```
-php artisan config:publish thomaswelton/laravel-gravatar
+php artisan vendor:publish
 ```
 
 ### Default Image
 
-Update the config file to specify the default avatar size to use and a default image to be return if no Gravatar is found. 
+Update the config file to specify the default avatar size to use and a default image to be return if no Gravatar is found.
 
 Allowed defaults:
 - (bool)   `false`
