@@ -19,7 +19,11 @@ class Gravatar extends GravatarLib
         $this->enableSecureImages();
     }
 
-    public function src($email, $size = null, $rating = null)
+    public function rawSrc($email) {
+        return $this->src($email, null, null, true);
+    }    
+
+    public function src($email, $size = null, $rating = null, $rawUrl = false)
     {
         if (is_null($size))
         {
@@ -35,7 +39,13 @@ class Gravatar extends GravatarLib
             $this->setMaxRating($rating);
         }
 
-        return htmlentities($this->buildGravatarURL($email));
+        $url = $this->buildGravatarURL($email);
+
+        if(!$rawUrl) {
+            $url = htmlentities($url);
+        }
+
+        return $url;
     }
 
     public function image($email, $alt = null, $attributes = array(), $rating = null)
