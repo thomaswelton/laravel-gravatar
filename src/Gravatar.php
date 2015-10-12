@@ -106,7 +106,7 @@ class Gravatar extends GravatarLib
         $url = $this->buildGravatarURL($email);
         $headers = get_headers($url, 1);
 
-        return strpos($headers[0], '200') > 0;
+        return substr($headers[0], 9, 3) == '200';
     }
 
     /**

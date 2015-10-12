@@ -29,6 +29,17 @@ class GravatarTest extends PHPUnit_Framework_TestCase
     }
 
     /** @test */
+    public function it_uses_a_default_image_if_the_gravatar_is_not_found()
+    {
+        $default = 'http://dummyimage.com/300/09f/fff.png';
+        $config = $this->getConfig($default, 250, 'g');
+        $gravatar = new Gravatar($config);
+
+        $this->assertContains(sprintf("&d=%s", urlencode($default)), $gravatar->src('foo@example.com'));
+        $this->assertEquals(302, $this->statusCode($gravatar->src('foo@example.com')));
+    }
+
+    /** @test */
     public function it_can_override_the_size_of_an_existing_gravatar()
     {
         $config = $this->getConfig('monsterid', 200, 'pg');
@@ -124,5 +135,12 @@ class GravatarTest extends PHPUnit_Framework_TestCase
         $config->shouldReceive('get')->with('gravatar.maxRating', 'g')->andReturn($rating);
 
         return $config;
+    }
+
+    private function statusCode($url)
+    {
+        $headers = get_headers($url, 1);
+
+        return substr($headers[0], 9, 3);
     }
 }
