@@ -1,4 +1,6 @@
-<?php namespace Thomaswelton\LaravelGravatar;
+<?php
+
+namespace Thomaswelton\LaravelGravatar;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -6,8 +8,6 @@ class LaravelGravatarServiceProvider extends ServiceProvider
 {
     /**
      * Boot the service provider.
-     *
-     * @return void
      */
     public function boot()
     {
@@ -16,8 +16,6 @@ class LaravelGravatarServiceProvider extends ServiceProvider
 
     /**
      * Setup the config.
-     *
-     * @return void
      */
     protected function setupConfig()
     {
@@ -28,13 +26,10 @@ class LaravelGravatarServiceProvider extends ServiceProvider
 
     /**
      * Register the service provider.
-     *
-     * @return void
      */
     public function register()
     {
-        $this->app['gravatar'] = $this->app->share(function($app)
-        {
+        $this->app['gravatar'] = $this->app->share(function ($app) {
             return new Gravatar($this->app['config']);
         });
     }
