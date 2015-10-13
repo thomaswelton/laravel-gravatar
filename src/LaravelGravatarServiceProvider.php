@@ -19,7 +19,7 @@ class LaravelGravatarServiceProvider extends ServiceProvider
      */
     protected function setupConfig()
     {
-        $source = realpath(__DIR__.'/../../../config/gravatar.php');
+        $source = realpath(__DIR__.'/../config/gravatar.php');
         $this->publishes([$source => config_path('gravatar.php')]);
         $this->mergeConfigFrom($source, 'gravatar');
     }
