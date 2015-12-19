@@ -27,7 +27,7 @@ Alias the Gravatar facade by adding it to the aliases array in the `config/app.p
 
 Copy the config file into your project by running
 ```
-php artisan vendor:publish
+php artisan vendor:publish --provider="Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider"
 ```
 
 ### Default Image
