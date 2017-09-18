@@ -11,6 +11,8 @@ Update your `composer.json` file to include this package as a dependency
 "thomaswelton/laravel-gravatar": "~1.0"
 ```
 
+> This package supports the [package discovery](https://laravel.com/docs/5.5/packages#package-discovery) functionality provided in Laravel 5.5, so registering the classes as described below is no longer necessary if you use Laravel 5.5.
+
 Register the Gravatar service provider by adding it to the providers array in the `config/app.php` file.
 ```php
 Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class
