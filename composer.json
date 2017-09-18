@@ -35,5 +35,18 @@
          "Thomaswelton\\Tests\\LaravelGravatar\\":"tests/"
       }
    },
+   "extra": {
+        "branch-alias": {
+            "dev-master": "3.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Thomaswelton\\LaravelGravatar\\LaravelGravatarServiceProvider"
+            ],
+            "aliases": {
+                "Gravatar": "Thomaswelton\\LaravelGravatar\\Facades\\Gravatar"
+            }
+        }
+    },
    "minimum-stability":"stable"
 }
