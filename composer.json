@@ -36,9 +36,6 @@
       }
    },
    "extra": {
-        "branch-alias": {
-            "dev-master": "3.0-dev"
-        },
         "laravel": {
             "providers": [
                 "Thomaswelton\\LaravelGravatar\\LaravelGravatarServiceProvider"
